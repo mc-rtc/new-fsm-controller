@@ -2,9 +2,7 @@
 
 #include "../NewFSMController.h"
 
-void NewFSMController_Initial::configure(const mc_rtc::Configuration & config)
-{
-}
+void NewFSMController_Initial::configure(const mc_rtc::Configuration & config) {}
 
 void NewFSMController_Initial::start(mc_control::fsm::Controller & ctl_)
 {

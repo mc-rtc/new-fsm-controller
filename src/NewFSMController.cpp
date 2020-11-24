@@ -16,5 +16,3 @@ void NewFSMController::reset(const mc_control::ControllerResetData & reset_data)
 {
   mc_control::fsm::Controller::reset(reset_data);
 }
-
-
