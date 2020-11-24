@@ -1,0 +1,9 @@
+{
+  "name": "mc-rtc-new-fsm-controller",
+  "version-string": "1.0.0",
+  "homepage": "",
+  "description": "NewFSMController for mc_rtc",
+  "dependencies": [
+    "mc-rtc"
+  ]
+}
