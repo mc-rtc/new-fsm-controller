@@ -46,20 +46,19 @@ jobs:
         ubuntu: |
           apt: libmc-rtc-dev
           apt-mirrors:
-            multi-contact:
-              mirror: https://dl.bintray.com/gergondet/multi-contact-head
-              key: 892EA6EE273707C6495A6FB6220D644C64666806
+            mc-rtc:
+              cloudsmith: mc-rtc/head
         macos: |
-          brew: gcc
-          vcpkg:
-            repo: jrl-umi3218/vcpkg
-            user: ${{ github.actor }}
-            token: ${{ github.token }}
+          brew-taps: mc-rtc/mc-rtc
+          brew: mc_rtc
         windows: |
           vcpkg:
-            repo: jrl-umi3218/vcpkg
-            user: ${{ github.actor }}
-            token: ${{ github.token }}
+            repo: microsoft/vcpkg
+            owner: mc-rtc
+            token: "${{ secrets.GITHUB_TOKEN }}"
+            registries:
+            - repo: mc-rtc/vcpkg-registry
+              packages: [ spacevecalg, rbdyn, eigen-qld, sch-core, tasks, mc-rbdyn-urdf, mc-rtc-data, eigen-quadprog, state-observation, hpp-spline, mc-rtc ]
     - name: Build and test
       uses: jrl-umi3218/github-actions/build-cmake-project@master
       with:
