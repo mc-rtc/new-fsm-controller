@@ -7,7 +7,10 @@ set(PROJECT_NAME NewFSMController)
 set(PROJECT_DESCRIPTION "NewFSMController")
 set(PROJECT_URL "")
 
-project(${PROJECT_NAME} LANGUAGES CXX VERSION 1.0.0)
+project(
+  ${PROJECT_NAME}
+  LANGUAGES CXX
+  VERSION 1.0.0)
 include(CTest)
 enable_testing()
 
@@ -21,6 +24,7 @@ if(BUILD_TESTING)
   add_subdirectory(tests)
 endif()
 
-configure_file(etc/NewFSMController.in.yaml "${CMAKE_CURRENT_BINARY_DIR}/etc/NewFSMController.yaml")
-install(FILES "${CMAKE_CURRENT_BINARY_DIR}/etc/NewFSMController.yaml" DESTINATION "${MC_CONTROLLER_RUNTIME_INSTALL_PREFIX}/etc")
-
+configure_file(etc/NewFSMController.in.yaml
+               "${CMAKE_CURRENT_BINARY_DIR}/etc/NewFSMController.yaml")
+install(FILES "${CMAKE_CURRENT_BINARY_DIR}/etc/NewFSMController.yaml"
+        DESTINATION "${MC_CONTROLLER_RUNTIME_INSTALL_PREFIX}/etc")
